@@ -92,7 +92,7 @@
     </div>
     <h2>ADD JOB</h2>
     <center>
-        <form method="post" action="addjob.php">
+        <form method="post">
 
             <label>Minimun CPI:</label>
             <input type="number" name="min_cpi" required><br><br>
@@ -142,7 +142,6 @@
         mysqli_close($conn);
     }
     ?>
-
 </body>
 
 </html>

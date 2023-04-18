@@ -139,15 +139,15 @@
 
         <div id="admin-tab" class="tab">
             <h2>Admin Login</h2>
+            Default Username: admin , password : Admin@123<br><br>
             <form action="adminlogin.php" method="post">
-                <label for="admin-username">Email</label>
-                <input type="text" id="admin-username" name="admin-username" placeholder="Enter your email">
+                <label for="admin-username">Username</label>
+                <input type="text" id="admin-username" name="admin-username" placeholder="admin">
                 <label for="admin-password">Password</label>
-                <input type="password" id="admin-password" name="admin-password" placeholder="Enter your password">
+                <input type="password" id="admin-password" name="admin-password" placeholder="Admin@123">
                 <input type="submit" value="Log in">
             </form>
             <br>
-            <a href="adminsignup.php"><button>Create Admin Account</button></a>
         </div>
     </div>
     <script>
