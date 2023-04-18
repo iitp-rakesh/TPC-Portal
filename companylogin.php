@@ -1,0 +1,33 @@
+<?php
+    // Establish a connection to the MySQL database
+    include 'dp.php';
+
+    // Retrieve user data from the login form
+    $email = $_POST['company-username'];
+    $password = $_POST['company-password'];
+
+    // Retrieve user data from the database
+    $sql = "SELECT * FROM company_credentials WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
+
+    // Set the session variable
+    $_SESSION['email'] = $email;
+
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['password'])) {
+            echo "Login successful";
+            header("Location: companyhomepage.php");
+            exit();
+        } else {
+            echo "Incorrect password";
+        }
+    } else {
+        echo "User Not Found";
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    ?>
+
